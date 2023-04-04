@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:permission_asker/src/permission_asker.dart';
 import 'package:permission_asker/src/permission_data.dart';
@@ -91,7 +90,7 @@ class _PermissionAskerBuilderState extends State<PermissionAskerBuilder> {
           } else {
             final permissionsNotGranted = snapshot.data!;
             if (widget.notGrantedListener != null) {
-              WidgetsBinding.instance?.addPostFrameCallback(
+              WidgetsBinding.instance.addPostFrameCallback(
                 (_) => widget.notGrantedListener!(permissionsNotGranted),
               );
             }
